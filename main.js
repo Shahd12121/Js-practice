@@ -1,27 +1,25 @@
-do{
-    console.log("1 to order burger");
-    console.log("1 to order piza");
-    console.log("1 to order frid chicken");
-    console.log("1 to order  water");
-    let number= Number(prompt("choose number to order"));
-    switch (number) {
-        case 1 : 
-        console.log("burger your way");
-        break;
-        case 2 : 
-        console.log("piza your way");
-        break;
-        case 3 : 
-        console.log("frid chicken your way");
-        break;
-        case 4 : 
-        console.log("water your way");
-        break;
+//عايزين نجمع الارقام غير المكررة  في المصفوفة
 
-        default:
-            console.log("sorry choose from 1 to 4");
-            break;
+let numbers = [4, 5, 7, 8, 5, 7, 9, 9];
+let sum = 0;
+
+// بنمر على كل عنصر في المصفوفة
+
+for (let i = 0; i < numbers.length; i++) {
+  let count = 0;          // هنعد عدد المرات اللي ظهر فيها العنصر
+
+  // هنمر علي العناصر تاني عشان نشوف المكرر
+  
+  for (let s = 0; s < numbers.length; s++) {
+    if (numbers[i] == numbers[s]) {
+      count++;  // إذا العنصر ده متكرر بنزود العد
     }
-    
+  }
+// لو النصر ظهر مرة واحدة بس
+  if (count == 1) {
+    sum = sum + numbers[i];
+   numbers[i] = 0;   // بنخلي العنصر صفر علشان ما نعدهوش تاني
+  }
+}
 
-} while (number!=0);
+console.log(sum);
